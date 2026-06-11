@@ -191,11 +191,9 @@ Buka Ucapan 💖
 <p>
 Selamat ulang tahun yang ke-16 Mesalina! ✨
 <br><br>
-
 Semoga di usia yang baru ini kamu selalu diberi kesehatan,
 kebahagiaan, dan kekuatan untuk meraih semua impianmu.
 <br><br>
-
 Tetaplah menjadi pribadi yang ceria,
 kuat, dan selalu bersinar seperti sekarang. 💕
 </p>
@@ -236,16 +234,13 @@ Pesan Terakhir 💝
 <p>
 Selamat ulang tahun buat besti poreper akuuu 💖
 <br><br>
-
 Semoga semua harapanmu terkabul,
 langkahmu selalu dimudahkan,
 dan senyummu selalu menghiasi hari-harimu.
 <br><br>
-
 Semoga dipertemukan dengan orang-orang baik
 di sekitarmu dan selalu diberikan kebahagiaan.
 <br><br>
-
 Doa terbaik buat dirimuuu ✨
 <br><br>
 
@@ -274,25 +269,32 @@ function nextPage(num){
 
 }
 
-function createHeart(){
+ffunction createFlower(){
 
-    let heart=document.createElement("div");
+    let flower=document.createElement("div");
 
-    heart.className="heart";
-    heart.innerHTML="💖";
+    flower.className="heart";
 
-    heart.style.left=
+  const flowers = ["🌸","🌷","🦋","✨","🌺","💖"];
+
+    flower.innerHTML=
+    flowers[Math.floor(Math.random()*flowers.length)];
+
+    flower.style.left=
     Math.random()*100+"vw";
 
-    heart.style.fontSize=
+    flower.style.fontSize=
     (15+Math.random()*25)+"px";
 
-    document.body.appendChild(heart);
+    document.body.appendChild(flower);
 
     setTimeout(()=>{
-        heart.remove();
+        flower.remove();
     },6000);
 
+}
+
+setInterval(createFlower,300);
 }
 
 setInterval(createHeart,300);
