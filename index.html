@@ -6,192 +6,250 @@
 <title>Happy Birthday Mesalina</title>
 
 <style>
+
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Poppins,sans-serif;
-}
-
-.barbie{
-position:absolute;
-width:120px;
-z-index:10;
-}
-
-.kiri{
-top:20px;
-left:20px;
-}
-
-.kanan{
-top:20px;
-right:20px;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Poppins,sans-serif;
 }
 
 body{
-background:linear-gradient(-45deg,#dff4ff,#c7ebff,#b8e3ff,#d9f3ff);
-background:linear-gradient(-45deg,#7fd3ff,#5cc6ff,#9de2ff,#b8ecff);
-height:100vh;
-overflow:hidden;
-color:white;
-   <img src="https://contoh.com/barbie1.png" alt="Barbie">
-<img src="https://contoh.com/barbie2.png" alt="Barbie">
-<img src="https://contoh.com/barbie3.png" alt="Barbie">
-<img src="https://contoh.com/barbie4.png" alt="Barbie">
+    height:100vh;
+    overflow:hidden;
+    color:white;
+    background:linear-gradient(
+        -45deg,
+        #7fd3ff,
+        #5cc6ff,
+        #9de2ff,
+        #b8ecff
+    );
+    background-size:400% 400%;
+    animation:bgMove 10s ease infinite;
 }
 
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* BARBIE */
+
+.barbie{
+    position:absolute;
+    width:220px;
+    z-index:5;
+}
+
+.kiri{
+    left:20px;
+    top:50%;
+    transform:translateY(-50%);
+}
+
+.kanan{
+    right:20px;
+    top:50%;
+    transform:translateY(-50%);
+}
+
+/* HALAMAN */
+
 .page{
-position:absolute;
-width:100%;
-height:100%;
-display:none;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-text-align:center;
-padding:20px;
-animation:fade .8s;
+    position:absolute;
+    width:100%;
+    height:100%;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    padding:20px;
+    animation:fade .8s;
+    z-index:10;
 }
 
 .active{
-display:flex;
+    display:flex;
 }
 
 h1{
-font-size:3rem;
-margin-bottom:20px;
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+h2{
+    margin-top:10px;
 }
 
 p{
-max-width:700px;
-line-height:1.8;
-font-size:1.1rem;
+    max-width:700px;
+    line-height:1.8;
+    font-size:1.1rem;
 }
+
+/* BUTTON */
 
 button{
-margin-top:25px;
-padding:12px 28px;
-border:none;
-border-radius:30px;
-background:white;
-color:#ff69b4;
-font-size:16px;
-cursor:pointer;
-font-weight:bold;
+    margin-top:25px;
+    padding:12px 28px;
+    border:none;
+    border-radius:30px;
+    background:white;
+    color:#ff69b4;
+    font-size:16px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:.3s;
 }
 
+button:hover{
+    transform:scale(1.05);
+}
+
+/* GALERI */
+
 .gallery{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:15px;
-margin-top:20px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+    margin-top:20px;
 }
 
 .gallery img{
-width:180px;
-height:180px;
-object-fit:cover;
-border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,.3);
+    width:180px;
+    height:180px;
+    object-fit:cover;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.3);
 }
 
+/* LOVE */
+
 .heart{
-position:absolute;
-bottom:-20px;
-font-size:20px;
-animation:float 6s linear infinite;
+    position:absolute;
+    bottom:-20px;
+    animation:float 6s linear infinite;
 }
 
 @keyframes float{
-from{
-transform:translateY(0);
-opacity:1;
-}
-to{
-transform:translateY(-110vh);
-opacity:0;
-}
+    from{
+        transform:translateY(0);
+        opacity:1;
+    }
+
+    to{
+        transform:translateY(-110vh);
+        opacity:0;
+    }
 }
 
 @keyframes fade{
-from{
-opacity:0;
-transform:translateY(20px);
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
+
 </style>
 </head>
 
 <body>
 
+<!-- BARBIE -->
 
-<img class="barbie kiri"
-src="https://pngimg.com/d/barbie_PNG12.png">
-
-<img class="barbie kanan"
-src="https://pngimg.com/d/barbie_PNG13.png">
+<img class="barbie kiri" src="barbie1.png">
+<img class="barbie kanan" src="barbie2.png">
 
 <!-- HALAMAN 1 -->
+
 <div class="page active" id="page1">
+
 <h1>🎂 Happy Birthday 🎂</h1>
+
 <h2>Mesalina Salfadio</h2>
-<button onclick="nextPage(2)">Buka Ucapan 💖</button>
+
+<button onclick="nextPage(2)">
+Buka Ucapan 💖
+</button>
+
 </div>
 
 <!-- HALAMAN 2 -->
+
 <div class="page" id="page2">
+
 <h1>💌 Untuk Mesalina</h1>
 
 <p>
-Selamat ulang tahun yang ke-16 Mesalina! ✨<br><br>
+Selamat ulang tahun yang ke-16 Mesalina! ✨
+<br><br>
 
 Semoga di usia yang baru ini kamu selalu diberi kesehatan,
 kebahagiaan, dan kekuatan untuk meraih semua impianmu.
+<br><br>
 
-Tetaplah menjadi pribadi yang ceria, kuat,
-dan selalu bersinar seperti sekarang. 💕
+Tetaplah menjadi pribadi yang ceria,
+kuat, dan selalu bersinar seperti sekarang. 💕
 </p>
 
-<button onclick="nextPage(3)">Lihat Kenangan 📸</button>
+<button onclick="nextPage(3)">
+Lihat Kenangan 📸
+</button>
+
 </div>
 
 <!-- HALAMAN 3 -->
+
 <div class="page" id="page3">
 
 <h1>📸 Kenangan</h1>
 
 <div class="gallery">
+
 <img src="IMG-20260127-WA0132.jpg">
 <img src="IMG-20260527-WA0180.jpg">
 <img src="IMG-20260527-WA0202.jpg">
 <img src="IMG-20260312-WA0578.jpg">
-<img src="IMG-20260312-WA0576.jpg">
+
 </div>
 
-<button onclick="nextPage(4)">Pesan Terakhir 💝</button>
+<button onclick="nextPage(4)">
+Pesan Terakhir 💝
+</button>
 
 </div>
 
 <!-- HALAMAN 4 -->
+
 <div class="page" id="page4">
 
 <h1>🎉 Sweet 16 🎉</h1>
 
 <p>
-Selamat ulang tahun buat besti poreper akuuu
+Selamat ulang tahun buat besti poreper akuuu 💖
+<br><br>
 
 Semoga semua harapanmu terkabul,
 langkahmu selalu dimudahkan,
-dan senyummu selalu menghiasi hari-harimu
-    semoga dipertemukan dengan orang-orang baik disekitarmu
-    doa terbaik buat dirimuuu
+dan senyummu selalu menghiasi hari-harimu.
+<br><br>
 
-Happy Birthday Mesalina Salfadio 💖
+Semoga dipertemukan dengan orang-orang baik
+di sekitarmu dan selalu diberikan kebahagiaan.
+<br><br>
+
+Doa terbaik buat dirimuuu ✨
+<br><br>
+
+Happy Birthday Mesalina Salfadio 💕
 </p>
 
 <h2 style="margin-top:20px">
@@ -204,30 +262,36 @@ Happy Birthday Mesalina Salfadio 💖
 
 function nextPage(num){
 
-document.querySelectorAll(".page").forEach(page=>{
-page.classList.remove("active");
-});
+    document
+    .querySelectorAll(".page")
+    .forEach(page=>{
+        page.classList.remove("active");
+    });
 
-document.getElementById("page"+num).classList.add("active");
+    document
+    .getElementById("page"+num)
+    .classList.add("active");
 
 }
 
 function createHeart(){
 
-let heart=document.createElement("div");
+    let heart=document.createElement("div");
 
-heart.className="heart";
-heart.innerHTML="💖";
+    heart.className="heart";
+    heart.innerHTML="💖";
 
-heart.style.left=Math.random()*100+"vw";
+    heart.style.left=
+    Math.random()*100+"vw";
 
-heart.style.fontSize=(15+Math.random()*25)+"px";
+    heart.style.fontSize=
+    (15+Math.random()*25)+"px";
 
-document.body.appendChild(heart);
+    document.body.appendChild(heart);
 
-setTimeout(()=>{
-heart.remove();
-},6000);
+    setTimeout(()=>{
+        heart.remove();
+    },6000);
 
 }
 
